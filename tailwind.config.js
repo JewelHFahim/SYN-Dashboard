@@ -7,10 +7,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        "dark-purple": "#081A51",
-        "light-white": "#8b969f"
+        "dark": "#181818",
+        "light-white": "#8b969f",
+        "tcolor": "#6c757d",
+        "pColor": "#923eb9"
       }
     },
   },
+
   plugins: [],
+
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BsArrowLeftShort, BsChevronLeft, BsGiftFill, BsDatabaseFill, BsShieldFillCheck, BsFillLayersFill } from "react-icons/bs"
-import {  IoBagHandleSharp, IoBriefcaseSharp, IoLeafSharp, IoBarChartSharp, IoMapSharp, IoDocumentTextSharp } from "react-icons/io5"
+import { IoBagHandleSharp, IoBriefcaseSharp, IoLeafSharp, IoBarChartSharp, IoMapSharp, IoDocumentTextSharp } from "react-icons/io5"
 import { AiFillHome } from "react-icons/ai"
 import { FiLink2 } from "react-icons/fi"
 import { IoLogoChrome } from "react-icons/io"
@@ -9,19 +9,20 @@ import { MdSecurity } from "react-icons/md"
 import { FaUserCircle, FaList } from "react-icons/fa"
 import { HiOutlineNewspaper } from "react-icons/hi"
 
-const SideNav = (  ) => {
+const SideNav = ({ open, setOpen }) => {
 
-    const [open, setOpen] = useState(true);
+    // const [open, setOpen] = useState(true);
+
     const [submenuOpen, setSubmenuOpen] = useState(false);
-    
+
 
     const Menus = [
-        { title: "Dashboard", icon: <AiFillHome/> },
-        { title: "eCommerce", icon: <IoBagHandleSharp/> },
+        { title: "Dashboard", icon: <AiFillHome /> },
+        { title: "eCommerce", icon: <IoBagHandleSharp /> },
         { title: "UI ELEMENTS", spacing: true, sections: true },
         {
             title: "Widgets",
-            icon: <IoBriefcaseSharp/>,
+            icon: <IoBriefcaseSharp />,
             submenu: true,
             submenuItems: [
                 { title: "Submenu 1" },
@@ -29,36 +30,35 @@ const SideNav = (  ) => {
                 { title: "Submenu 3" }
             ],
         },
-        { title: "Components", icon: <BsGiftFill/>  },
-        { title: "Icons", icon: <IoLeafSharp/>  },
+        { title: "Components", icon: <BsGiftFill /> },
+        { title: "Icons", icon: <IoLeafSharp /> },
         { title: "FORMS & TABLES", sections: true },
-        { title: "Forms", icon: <RiFileList3Fill/>  },
-        { title: "Tables", icon: <BsDatabaseFill/>  },
+        { title: "Forms", icon: <RiFileList3Fill /> },
+        { title: "Tables", icon: <BsDatabaseFill /> },
         { title: "PAGES", sections: true },
-        { title: "Authentications", icon: <MdSecurity/>  },
-        { title: "User Profile", icon: <FaUserCircle/>  },
-        { title: "Edit Profile", icon: <RiEditBoxFill/>  },
-        { title: "Invoice", icon: <HiOutlineNewspaper/>  },
-        { title: "Invoice", icon: <BsShieldFillCheck/>  },
-        { title: "Extra Pages", icon: <BsFillLayersFill/>  },
+        { title: "Authentications", icon: <MdSecurity /> },
+        { title: "User Profile", icon: <FaUserCircle /> },
+        { title: "Edit Profile", icon: <RiEditBoxFill /> },
+        { title: "Invoice", icon: <HiOutlineNewspaper /> },
+        { title: "Invoice", icon: <BsShieldFillCheck /> },
+        { title: "Extra Pages", icon: <BsFillLayersFill /> },
         { title: "CHARTS & MAPS", sections: true },
-        { title: "Charts", icon: <IoBarChartSharp/>  },
-        { title: "Maps", icon: <IoMapSharp/>  },
+        { title: "Charts", icon: <IoBarChartSharp /> },
+        { title: "Maps", icon: <IoMapSharp /> },
         { title: "OTHERS", sections: true },
-        { title: "Menu Levels", icon: <FaList/>  },
-        { title: "Documentaion", icon: <IoDocumentTextSharp/>  },
-        { title: "Support", icon: <FiLink2/>  },
+        { title: "Menu Levels", icon: <FaList /> },
+        { title: "Documentaion", icon: <IoDocumentTextSharp /> },
+        { title: "Support", icon: <FiLink2 /> },
 
     ];
 
     return (
-        <div className="flex">
+        <div className="flex border border-l-0 border-t-0 border-b-0">
             <div
-                className={`bg-dark-purple h-full p-5 pt-8 ${open ? "w-72" : "w-20"} duration-300 relative`}>
+                className={`bg-dark h-full p-5 pt-8 ${open ? "w-72" : "w-20"} duration-300 relative`}>
                 <BsArrowLeftShort
                     className={`bg-white text-dark-purple text-3xl rounded-full absolute -right-3 top-9 border border-dark-purple cursor-pointer ${!open && "rotate-180"}`}
-                    onClick={() => setOpen(!open)}
-                />
+                    onClick={() => setOpen(!open)}/>
 
                 <div className="inline-flex">
                     <IoLogoChrome
@@ -67,14 +67,7 @@ const SideNav = (  ) => {
                     <h1 className={`text-white origin-left font-medium text-2xl ${!open && "scale-0"}`}>Logo</h1>
                 </div>
 
-                {/* <div className={`flex items-center rounded-md bg-slate-200 mt-6 ${!open ? "px-2.5" : "px-4"} py-2`}>
-                    <BsSearch
-                        className={`text-white text-lg block float-left cursor-pointer ${open && "mr-2"}`}
-                    />
-                    <input type={'search'} placeholder="Search"
-                        className={`text-base bg-transparent w-full text-white focus:outline-none ${!open && "hidden"}`}
-                    />
-                </div> */}
+
 
                 <ul className="pt-2">
                     {
@@ -93,8 +86,8 @@ const SideNav = (  ) => {
                                 </span>
                                 {
                                     menu.submenu && open &&
-                                     (<BsChevronLeft className={`${submenuOpen} ${ submenuOpen && open && "rotate-[-90deg]"} duration-300`}
-                                    onClick={ () => {setSubmenuOpen(!submenuOpen)}} />)
+                                    (<BsChevronLeft className={`${submenuOpen} ${submenuOpen && open && "rotate-[-90deg]"} duration-300`}
+                                        onClick={() => { setSubmenuOpen(!submenuOpen) }} />)
                                 }
                             </li>
                             {
@@ -119,9 +112,10 @@ const SideNav = (  ) => {
 
             </div>
 
-            <div className="p-7">
+            {/* <div className="p-7">
                 <h1 className="text-2xl font-semibold text-dark-purple">Home Page</h1>
-            </div>
+            </div> */}
+
         </div>
     );
 };

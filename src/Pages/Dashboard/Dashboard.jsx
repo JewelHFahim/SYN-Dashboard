@@ -1,7 +1,19 @@
+
 const Dashboard = () => {
     return (
-        <div className="p-20">
-            Dashboard
+        <div className="grid grid-cols-3 items-center mx-[350px] text-white">
+
+            <div className="">
+               1
+            </div>
+
+            <div>
+                2
+            </div>
+
+            <div>
+                3
+            </div>
         </div>
     );
 };
