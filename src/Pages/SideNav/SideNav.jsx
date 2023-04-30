@@ -53,7 +53,7 @@ const SideNav = ({ open, setOpen }) => {
     ];
 
     return (
-        <div className="flex border border-l-0 border-t-0 border-b-0">
+        <div className="flex">
             <div
                 className={`bg-dark h-full p-5 pt-8 ${open ? "w-72" : "w-20"} duration-300 relative`}>
                 <BsArrowLeftShort
@@ -74,13 +74,13 @@ const SideNav = ({ open, setOpen }) => {
                         Menus.map((menu, index) => (<>
                             <li
                                 key={index}
-                                className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-slate-50 rounded-md mt-2 ${menu.sections ? "hover:bg-transparent gap-x-0 ml-[-8px]" : ""} duration-300`}
+                                className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-slate-50 rounded-md mt-2 ${menu.sections ? "hover:bg-transparent gap-x-0 ml-[-25px]" : ""} duration-300`}
                             >
                                 <span className="text-2xl block float-left ">
                                     {menu.icon ? menu.icon : ""}
                                 </span>
                                 <span
-                                    className={`text-base font-medium flex-1 duration-200 ${!open && "hidden"} ${menu.sections ? "text-[12px] cursor-text" : ""} duration-300`}
+                                    className={`text-base font-medium flex-1 duration-200 ${!open && "hidden"} ${menu.sections ? "text-[11px] cursor-text" : ""} duration-300`}
                                 >
                                     {menu.title}
                                 </span>
