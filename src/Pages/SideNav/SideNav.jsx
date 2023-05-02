@@ -8,6 +8,7 @@ import { RiFileList3Fill, RiEditBoxFill } from "react-icons/ri"
 import { MdSecurity } from "react-icons/md"
 import { FaUserCircle, FaList } from "react-icons/fa"
 import { HiOutlineNewspaper } from "react-icons/hi"
+import { Link } from "react-router-dom";
 
 const SideNav = ({ open, setOpen }) => {
 
@@ -17,8 +18,8 @@ const SideNav = ({ open, setOpen }) => {
 
 
     const Menus = [
-        { title: "Dashboard", icon: <AiFillHome /> },
-        { title: "eCommerce", icon: <IoBagHandleSharp /> },
+        { title: "Dashboard", icon: <AiFillHome />, path: "/" },
+        { title: "eCommerce", icon: <IoBagHandleSharp />, path: '/ecommerce' },
         { title: "UI ELEMENTS", spacing: true, sections: true },
         {
             title: "Widgets",
@@ -74,7 +75,7 @@ const SideNav = ({ open, setOpen }) => {
                         Menus.map((menu, index) => (<>
                             <li
                                 key={index}
-                                className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-slate-50 rounded-md mt-2 ${menu.sections ? "hover:bg-transparent gap-x-0 ml-[-25px]" : ""} duration-300`}
+                                className={`text-tcolor text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-tcolor hover:text-white rounded-md mt-2 ${menu.sections ? "hover:bg-transparent gap-x-0 ml-[-25px]" : ""} duration-300`}
                             >
                                 <span className="text-2xl block float-left ">
                                     {menu.icon ? menu.icon : ""}
@@ -82,7 +83,7 @@ const SideNav = ({ open, setOpen }) => {
                                 <span
                                     className={`text-base font-medium flex-1 duration-200 ${!open && "hidden"} ${menu.sections ? "text-[11px] cursor-text" : ""} duration-300`}
                                 >
-                                    {menu.title}
+                                    <Link to={`${menu.path}`}>{menu.title}</Link>
                                 </span>
                                 {
                                     menu.submenu && open &&
@@ -95,7 +96,7 @@ const SideNav = ({ open, setOpen }) => {
                                     <ul>
                                         {
                                             menu.submenuItems.map((submenuItem, index) => (
-                                                <li key={index} className="text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 px-5 hover:bg-slate-50 rounded-md duration-300">
+                                                <li key={index} className="text-tcolor  text-sm flex items-center gap-x-4 cursor-pointer p-2 px-5 hover:bg-tcolor hover:text-white rounded-md duration-300">
                                                     {
                                                         submenuItem.title
                                                     }
@@ -111,10 +112,6 @@ const SideNav = ({ open, setOpen }) => {
                 </ul>
 
             </div>
-
-            {/* <div className="p-7">
-                <h1 className="text-2xl font-semibold text-dark-purple">Home Page</h1>
-            </div> */}
 
         </div>
     );

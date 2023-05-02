@@ -9,11 +9,11 @@ const Dashboard = () => {
                <Pichart/>
             </div>
 
-            <div>
+            <div className="border">
                 <DChart/>
             </div>
 
-            <div>
+            <div className="border"> 
                 3
             </div>
         </div>

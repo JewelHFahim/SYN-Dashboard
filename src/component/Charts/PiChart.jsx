@@ -20,7 +20,8 @@ export const data = {
             ],
             borderWidth: 1,
             borderColor: 'white',
-            cutout: "80%"
+            cutout: "80%",
+            
         },
     ],
 };

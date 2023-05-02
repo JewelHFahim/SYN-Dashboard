@@ -15,11 +15,11 @@ const Main = () => {
 
             <div className={`${open ? "pl-[350px] pr-[50px]" : "pl-[150px] pr-[50px]"} pt-[95px] pb-[20px] bg-[#181818]  w-full`}><Header /></div>
 
-            <div className={`absolute left-0 top-0 scrollbar-thin scrollbar-thumb-tcolor scrollbar-track-transparent overflow-x-hidden overflow-y-scroll h-screen border border-l-0 border-t-0 border-b-0 border-tcolor`}>
+            <div className={`fixed left-0 top-0 scrollbar-thin scrollbar-thumb-tcolor scrollbar-track-transparent overflow-x-hidden overflow-y-scroll h-full border border-l-0 border-t-0 border-b-0 border-tcolor`}>
                 <SideNav open={open} setOpen={setOpen} />
             </div>
 
-            <div className="bg-[#181818] h-screen"> <Outlet /> </div>
+            <div className="bg-[#181818] h-full"> <Outlet /> </div>
 
         </div>
     );

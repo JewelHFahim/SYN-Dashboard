@@ -3,37 +3,38 @@ import { Pie } from '@ant-design/plots';
 export const DChart = () => {
   const data = [
     {
-      type: '分类一',
+      type: 'Type-1',
       value: 27,
     },
     {
-      type: '分类二',
+      type: 'Type-2',
       value: 25,
     },
     {
-      type: '分类三',
+      type: 'Type-3',
       value: 18,
     },
     {
-      type: '分类四',
+      type: 'Type-4',
       value: 15,
     },
     {
-      type: '分类五',
+      type: 'Type-5',
       value: 10,
     },
     {
-      type: '其他',
+      type: 'Type-6',
       value: 5,
     },
   ];
   const config = {
-    appendPadding: 10,
+    
+    appendPadding: 1,
     data,
     angleField: 'value',
     colorField: 'type',
     radius: 1,
-    innerRadius: 0.6,
+    innerRadius: 0.85,
     label: {
       type: 'inner',
       offset: '-50%',
@@ -58,8 +59,9 @@ export const DChart = () => {
           whiteSpace: 'pre-wrap',
           overflow: 'hidden',
           textOverflow: 'ellipsis',
+          fontSize: 30,
         },
-        content: 'AntV\nG2Plot jewel',
+        content: '85% \n Total Visitors',
       },
     },
   };
