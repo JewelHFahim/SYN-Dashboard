@@ -1,6 +1,7 @@
 import { Pie } from '@ant-design/plots';
 
 const TopCategories = () => {
+
     const data = [
         {
             type: 'Electronics',
@@ -24,6 +25,7 @@ const TopCategories = () => {
         },
 
     ];
+
     const config = {
         appendPadding: 10,
         data,
@@ -34,7 +36,6 @@ const TopCategories = () => {
         innerRadius: 0.85,
         label: {
             display: false,
-            
             enabled: false,
             type: 'inner',
             offset: '-50%',
@@ -52,6 +53,7 @@ const TopCategories = () => {
                 type: 'element-active',
             },
         ],
+
         statistic: {
             title: false,
             content: {
@@ -59,16 +61,20 @@ const TopCategories = () => {
                     whiteSpace: 'pre-wrap',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
-                    color: 'white'
+                    color: 'white',
+                    fontSize: "25px",
+                    fontWeight: "normal"
                 },
                 content: ' 68% \n Total Sales',
             },
         },
+
+
     };
     return (
         <div className='bg-bgColor p-4 rounded-xl h-[400px] '>
             <p className='text-[20px] font-semibold text-white'>Top Categories</p>
-            <div className='h-[90%]'>
+            <div className='h-[90%] z-[-10]'>
                 <Pie {...config} />
             </div>
         </div>);

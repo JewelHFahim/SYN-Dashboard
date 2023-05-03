@@ -1,36 +1,80 @@
+import { Pie } from '@ant-design/plots';
 
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Doughnut } from 'react-chartjs-2';
-
-ChartJS.register(ArcElement, Tooltip, Legend);
-
-export const data = {
-    // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    datasets: [
+const PiChart = () => {
+    const data = [
         {
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                '#6610f2',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-            ],
-            borderWidth: 1,
-            borderColor: 'white',
-            cutout: "80%",
-            
+            type: 'Electronics',
+            value: 155,
         },
-    ],
-};
-const piChart = () => {
+        {
+            type: 'Furniture',
+            value: 120,
+        },
+        {
+            type: 'Fashion',
+            value: 110,
+        },
+        {
+            type: 'Accessories',
+            value: 150,
+        },
+        {
+            type: 'Mobiles',
+            value: 90,
+        },
+
+    ];
+    const config = {
+        appendPadding: 10,
+        data,
+        angleField: 'value',
+        colorField: 'type',
+        color: ['#2362eb', '#f42e4a', '#80e02e', '#9c1db6', '#f89d1a'],
+        radius: 1,
+        innerRadius: 0.85,
+        legend: {
+            show: false,
+            showForSingleSeries: false,
+        },
+        
+        label: {
+            display: false,
+            type: 'inner',
+            offset: '-50%',
+            content: '{value}',
+            style: {
+                textAlign: 'center',
+                fontSize: 14,
+            },
+        },
+        interactions: [
+            {
+                type: 'element-selected',
+            },
+            {
+                type: 'element-active',
+            },
+        ],
+        statistic: {
+            title: false,
+            content: {
+                style: {
+                    whiteSpace: 'pre-wrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    color: 'white'
+                },
+                content: ' 68% \n Total Sales',
+            },
+        },
+    };
     return (
-        <div className='border p-2'> 
-            <Doughnut data={data} />
-        </div>
-    );
+        <div className='bg-bgColor p-4 rounded-xl h-[400px] '>
+            <p className='text-[20px] font-semibold text-white'>Top Categories</p>
+            <div className='h-[90%] z-[-10]'>
+                <Pie {...config} />
+            </div>
+        </div>);
 };
 
-export default piChart;
+export default PiChart;

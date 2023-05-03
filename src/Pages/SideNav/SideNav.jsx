@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { BsArrowLeftShort, BsChevronLeft, BsGiftFill, BsDatabaseFill, BsShieldFillCheck, BsFillLayersFill } from "react-icons/bs"
+import { BsChevronLeft, BsGiftFill, BsDatabaseFill, BsShieldFillCheck, BsFillLayersFill } from "react-icons/bs"
 import { IoBagHandleSharp, IoBriefcaseSharp, IoLeafSharp, IoBarChartSharp, IoMapSharp, IoDocumentTextSharp } from "react-icons/io5"
-import { AiFillHome } from "react-icons/ai"
+import { AiFillHome, AiOutlineMenu } from "react-icons/ai"
 import { FiLink2 } from "react-icons/fi"
 import { IoLogoChrome } from "react-icons/io"
 import { RiFileList3Fill, RiEditBoxFill } from "react-icons/ri"
@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const SideNav = ({ open, setOpen }) => {
 
-    // const [open, setOpen] = useState(true);
+    // const [active, setActive] = useState(false);
 
     const [submenuOpen, setSubmenuOpen] = useState(false);
 
@@ -56,21 +56,23 @@ const SideNav = ({ open, setOpen }) => {
     return (
         <div className="flex">
             <div
-                className={`bg-dark h-full p-5 pt-8 ${open ? "w-72" : "w-20"} duration-300 relative`}>
-                <BsArrowLeftShort
-                    className={`bg-white text-dark-purple text-3xl rounded-full absolute -right-3 top-9 border border-dark-purple cursor-pointer ${!open && "rotate-180"}`}
-                    onClick={() => setOpen(!open)}/>
+                className={`bg-dark h-full p pt-[30px] ${open ? "w-72" : "w-20"} duration-300 relative`}>
 
-                <div className="inline-flex">
-                    <IoLogoChrome
-                        className={`text-white text-4xl cursor-pointer block float-left mr-2`}
-                    />
-                    <h1 className={`text-white origin-left font-medium text-2xl ${!open && "scale-0"}`}>Logo</h1>
+                <div className="border-b border-slate-600 px-4">
+                    <AiOutlineMenu
+                        className={`text-white text-3xl ll absolute right-4 top-9 cursor-pointer ${!open && "rotate-180" && "top-5 right-6"}`}
+                        onClick={() => setOpen(!open)} />
+
+                    <div className={`inline-flex  ${!open ? "hidden" : ""} `}>
+                        <IoLogoChrome
+                            className={`text-white text-4xl cursor-pointer block float-left mr-2`}
+                        />
+                        <h1 className={`text-white origin-left font-medium text-2xl ${!open && "scale-0"}`}>Logo</h1>
+                    </div>
+
                 </div>
 
-
-
-                <ul className="pt-2">
+                <ul className="pt-2 px-4">
                     {
                         Menus.map((menu, index) => (<>
                             <li

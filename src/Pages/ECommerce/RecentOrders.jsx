@@ -8,7 +8,7 @@ const RecentOrders = () => {
     const data = [1, 2, 3, 4, 5, 6, 7, 8]
 
     return (
-        <div className="bg-bgColor rounded-xl p-4">
+        <div className="bg-bgColor rounded-xl p-4 max-w-full overflow-x-auto">
             <div className='flex items-center justify-between'>
                 <p className="text-[20px] text-white font-semibold">Recent Orders</p>
                 <div className='text-2xl text-white'>
@@ -60,7 +60,7 @@ const RecentOrders = () => {
                                         <td>$214</td>
                                         <td>Apr 8, 2021</td>
                                         <td >
-                                            <p className=' text-green-600'>Completed</p>
+                                            <p className=' text-green-600 px-1 rounded-lg font-semibold bg-green-200  w-[90px]'>Completed</p>
                                         </td>
 
                                         <td>

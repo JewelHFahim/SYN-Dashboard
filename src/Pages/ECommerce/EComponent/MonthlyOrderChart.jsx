@@ -135,6 +135,7 @@ const MonthlyOrderChart = () => {
 
         columnStyle: {
             radius: [40, 40, 0, 0],
+            width: '10'
         },
         
     };

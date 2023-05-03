@@ -2,10 +2,11 @@ import { IoBagHandleSharp, IoWalletSharp, IoPieChartSharp } from 'react-icons/io
 import { BsCreditCardFill, BsFacebook } from 'react-icons/bs';
 import { ImUsers } from 'react-icons/im';
 import ECard from './EComponent/ECard';
-import MonthlyOrderChart from './EComponent/MonthlyOrderChart';
+// import MonthlyOrderChart from './EComponent/MonthlyOrderChart';
 import TopCategories from './EComponent/TopCategories';
 import Customers from './EComponent/Customers';
 import RecentOrders from './RecentOrders';
+import { Month } from './EComponent/Month';
 // import { TestChart } from './EComponent/TestChart';
 
 
@@ -70,7 +71,7 @@ const ECommerce = () => {
     ]
 
     return (
-        <div className='ml-[350px] mr-[50px]'>
+        <div className=''>
             {/* Summary */}
             <div className="grid lg:grid-cols-3 grid-cols-1 gap-5">
 
@@ -82,7 +83,9 @@ const ECommerce = () => {
 
             {/* Monthly Chart */}
             <div className='mt-10'>
-                <MonthlyOrderChart />
+                {/* <MonthlyOrderChart /> */}
+                <Month/>
+
             </div>
 
             {/* Top Categories and Customers */}

@@ -24,7 +24,6 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div className="w-[30px] h-[30px] rounded-full bg-slate-500">
-
                     </div>
                 </div>
             </div>

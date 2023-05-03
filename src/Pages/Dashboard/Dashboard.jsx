@@ -1,21 +1,44 @@
-import { DChart } from "../../component/Charts/DChart";
-import Pichart from "../../component/Charts/piChart";
+import UserActivity from "./UserActivity";
+import { TotalTraffic } from "./TotalTraffic";
+import EarningAndClients from "./EarningAndClients";
+import RecentOrders from "../ECommerce/RecentOrders";
+import { StatisticsMixedChart } from "./StatisticsMixedChart";
+import { TopCategoryPiChart } from "./TopCategoryPiChart";
 
 const Dashboard = () => {
     return (
-        <div className="grid grid-cols-3 items-center mx-[350px] text-white">
+        <div className="">
 
-            <div className="">
-               <Pichart/>
+            <div className="grid grid-cols-3 gap-5 items-center text-white">
+                <div className="">
+                    <TotalTraffic />
+                </div>
+
+                <div className="">
+                    <UserActivity />
+                </div>
+
+                <div className="">
+                    <EarningAndClients />
+                </div>
             </div>
 
-            <div className="border">
-                <DChart/>
+            <div className="mt-10 grid grid-cols-3 gap-5">
+                <div className="col-span-2 ">
+                    <StatisticsMixedChart />
+                </div>
+
+                <div>
+                    <TopCategoryPiChart />
+                </div>
             </div>
 
-            <div className="border"> 
-                3
+            {/* Recent Orders */}
+            <div className='mt-10'>
+                <RecentOrders />
             </div>
+
+
         </div>
     );
 };

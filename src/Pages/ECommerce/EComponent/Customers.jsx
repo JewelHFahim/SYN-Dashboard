@@ -48,7 +48,9 @@ const Customers = () => {
                     whiteSpace: 'pre-wrap',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
-                    color: 'white'
+                    color: 'white',
+                    fontSize: "25px",
+                    fontWeight: "normal"
                 },
                 content: ' 48K \n Customers',
             },
